@@ -40,3 +40,35 @@ const func = function(){
     console.log("hello world");
 }
 console.log(typeof outsideTemp);
+
+
+
+
+// ****************** Memnory ******************
+// Stack memory: used to store primitive data types and function calls
+// Heap memory: used to store non-primitive data types (objects, arrays, functions)  
+
+// two types of memory 
+// heap memory: used to store non-primitive data types (objects, arrays, functions)
+// stack memory: used to store primitive data types and function calls
+
+let myname = "Abhishek"; // stored in stack memory
+let Anothername = myname; // stored in stack memory
+
+console.log(myname); // Abhishek
+console.log(Anothername); // Abhishek
+
+let userOne = {
+    name: "Abhishek",
+    age: 21
+}
+
+let userTwo = userOne; // stored in heap memory
+
+console.log(userOne); // { name: 'Abhishek', age: 21 }
+console.log(userTwo); // { name: 'Abhishek', age: 21 }
+
+userTwo.name = "SA"; // change the name property of userTwo
+
+console.log(userOne); // { name: 'SA', age: 21 } because userOne and userTwo reference the same object in heap memory
+console.log(userTwo); // { name: 'SA', age: 21 }
